@@ -19,7 +19,8 @@ public class DifferentFormat {
 	public static void main(String[] args){
 		Scanner scanner = new Scanner(System.in);
 		Locale locale = Locale.US; 
-		SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", locale); //修改格式
+		//将时间格式修改成和输入的时间格式相同
+		SimpleDateFormat inputFormat = new SimpleDateFormat("dd/MMM/yyyy:HH:mm:ss", locale.ENGLISH); //修改格式
 		while (scanner.hasNext()){
 			String line = scanner.nextLine();
 			Date lineDate = null;
