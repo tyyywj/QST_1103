@@ -16,21 +16,29 @@ import java.util.Scanner;
 public class TimestampTransfer {
 	@SuppressWarnings("resource")
 	public static void main(String[] args){
+		//获取输入
 		Scanner scanner = new Scanner(System.in);
+		//
 		SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 		while (scanner.hasNext()){
+			//获取输入的一行
 			String line = scanner.nextLine();
+			//定义一个Date类型的变量
 			Date lineDate = null;
 			long lineTimestamp;
 			try {
+				//将String类型的line转换成Date类型
 				lineDate = inputFormat.parse(line);
+				//lineDate.getTime()返回的是long类型的毫秒数
 				lineTimestamp = lineDate.getTime();
+				//输出结果
 				System.out.println(outputFormat.format(lineDate) + " to " + lineTimestamp);
 			} catch (ParseException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
+	
 	}
 }
